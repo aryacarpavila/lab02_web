@@ -1,0 +1,354 @@
+/*
+    layout.css
+        - Estructura de página: header sticky (z-index), secciones, contenedor
+        - Grid principal: hero (grid), catálogo (grid), producto (grid), footer (grid)
+        - Flex layout: navegación, tarjetas de ofertas, acciones
+*/
+
+header {
+    position: sticky;
+    top: 0;
+    background-color: var(--color-header-bg);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    z-index: 100; 
+}
+
+.header-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center; 
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: var(--spacing-sm) var(--spacing-md);
+}
+
+
+header nav ul {
+    display: flex;
+    gap: var(--spacing-md); 
+}
+
+section:nth-of-type(2) > div:not(.elemento-destacado) {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr); /* 4 tarjetas por hilera */
+    gap: var(--spacing-md);
+    justify-items: center;
+    align-items: start;
+    margin-top: var(--spacing-md);
+    padding: var(--spacing-md);
+}
+
+article {
+    width: 100%;
+    max-width: 240px;
+    background-color: var(--color-white);
+    border-radius: 12px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+    overflow: hidden;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    text-align: center;
+    padding: var(--spacing-sm);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 360px; 
+}
+
+main section > div {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: var(--spacing-lg) var(--spacing-md);
+}
+
+footer .footer-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: var(--spacing-lg) var(--spacing-md);
+    background-color: var(--color-background-dark);
+    color: var(--color-white);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+footer nav ul {
+    display: flex;
+    gap: var(--spacing-md);
+}
+
+.categorias {
+    display: flex;             
+    flex-wrap: wrap;             
+    gap: 1rem;                 
+    list-style: none;            
+    padding: 0;
+    margin: var(0.4rem) 0;
+    justify-content: center;     
+}
+
+.categorias li a {
+    font-size: 0.75rem;
+    display: block;                        
+    padding: 0.6rem 1.2rem;              
+    background-color: var(--color-background-light); 
+    border-radius: 9999px;               
+    color: var(--color-text);            
+    font-weight: var(--font-weight-regular);
+    text-decoration: none;               
+    white-space: nowrap;                 
+    border: 1px solid var(--color-secondary); 
+    transition: all 0.2s ease;
+}
+
+.categorias li a:hover,
+.categorias li a:focus {
+    background-color: var(--color-secondary); 
+    color: var(--color-white);               
+    transform: translateY(-1px);             
+}
+
+.elemento-destacado h2 {
+    border-bottom: 3px solid var(--color-primary);
+    display: inline-block;
+    padding-bottom: 0.5rem;
+    margin-bottom: 1.5rem;
+    color: var(--color-text);
+    font-weight: var(--font-weight-bold);
+}
+
+
+main section:nth-of-type(2) > div > div:nth-of-type(2) { 
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); 
+    gap: var(--spacing-md); 
+    margin-top: var(--spacing-sm);
+}
+
+.ofertas-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: var(--spacing-md);
+}
+
+.oferta-descuento {
+    position: absolute;
+    top: 12px;
+    right: 12px;
+    background-color: var(--color-primary);
+    color: var(--color-white);
+    font-weight: var(--font-weight-bold);
+    font-size: 0.85rem;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.oferta-card .boton {
+    background-color: var(--color-primary);
+    color: var(--color-white);
+    padding: 0.6rem 1.2rem;
+    font-size: 0.85rem;
+    border-radius: 8px;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.producto-destacado__acciones {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-top: 1rem;
+}
+
+.producto-destacado__acciones .precio {
+    font-size: 1.3rem;
+    font-weight: 700;
+    color: var(--color-background-dark);
+}
+
+.producto-destacado__acciones .boton {
+    background-color: var(--color-secondary);
+    color: var(--color-white);
+    padding: 0.6rem 1.2rem;
+    border-radius: 8px;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.producto-destacado__acciones .boton:hover {
+    background-color: var(--color-secondary);
+}
+
+main section:nth-of-type(5) label {
+    font-weight: var(--font-weight-semibold);
+    color: var(--color-text);
+    margin-bottom: var(--spacing-xs);
+    font-size: 1.1rem;
+}
+
+main section:nth-of-type(5) input:not([type="submit"]):not([type="reset"]),
+main section:nth-of-type(5) textarea {
+    border: 1px solid var(--border-color-input);
+    border-radius: var(--border-radius-sm);
+    padding: 0.75rem 1rem;
+    font-size: 1rem;
+    color: var(--color-text);
+    width: 100%;
+    resize: none; 
+    transition: border-color 0.2s;
+}
+
+main section:nth-of-type(5) input:focus,
+main section:nth-of-type(5) textarea:focus {
+    border-color: var(--color-primary);
+    outline: none;
+}
+
+
+main section:nth-of-type(5) button[type="submit"] {
+    background-color: var(--color-primary); 
+    color: var(--color-white); 
+    border: none; 
+    font-weight: var(--font-weight-semibold);
+    text-transform: capitalize; 
+    cursor: pointer; 
+    
+    font-size: 1rem;      
+    padding: 0.75rem 1.5rem; 
+    border-radius: var(--border-radius-sm); 
+    transition: all 0.2s ease;
+}
+
+main section:nth-of-type(5) button[type="submit"]:hover {
+    background-color: var(--color-secondary); 
+    transform: translateY(-1px); 
+}
+
+main section:nth-of-type(5) button[type="reset"] {
+    background-color: var(--color-white); 
+    color: var(--color-text); 
+    border: 1px solid var(--border-color-input); 
+    cursor: pointer;
+    font-weight: 500;
+    text-transform: capitalize;
+    
+    font-size: 1rem; 
+    padding: 0.75rem 1.5rem; 
+    border-radius: var(--border-radius-sm); 
+    transition: all 0.2s;
+}
+
+main section:nth-of-type(5) button[type="reset"]:hover {
+    background-color: var(--color-background-light); 
+    border-color: var(--color-text-light);
+    transform: translateY(-1px); /* Se agregó el transform faltante aquí */
+}
+
+footer h3 {
+    font-size: 1.5rem;
+    margin-bottom: var(--spacing-xs);
+}
+
+
+header > div,
+main section > div,
+footer > div {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: var(--spacing-md) var(--spacing-sm);
+}
+
+main section {
+    padding-top: var(--spacing-lg);
+    padding-bottom: var(--spacing-lg);
+}
+
+main section:nth-of-type(5) {
+    background-color: var(--color-background-section); 
+}
+
+main section:nth-of-type(5) h2 {
+    margin-bottom: var(--spacing-lg);
+}
+
+main section:nth-of-type(5) form {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: var(--spacing-md);
+    margin-top: var(--spacing-md);
+}
+
+main section:nth-of-type(5) form > div {
+    display: flex;
+    flex-direction: column;
+}
+
+main section:nth-of-type(5) form > div:nth-of-type(3), 
+main section:nth-of-type(5) form > div:nth-of-type(4),
+main section:nth-of-type(5) form > div:nth-of-type(5) { 
+    grid-column: 1 / -1; 
+}
+
+main section:nth-of-type(5) form > div:nth-of-type(5) { 
+    display: flex;
+    justify-content: flex-start;
+    gap: var(--spacing-sm);
+    margin-top: var(--spacing-sm);
+}
+
+footer {
+    background-color: var(--color-background-dark);
+    color: var(--color-white);
+}
+
+footer > div {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    padding: var(--spacing-lg) var(--spacing-md);
+}
+
+footer > div a {
+    color: var(--color-white);
+}
+
+footer nav ul {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-xs);
+}
+
+footer nav ul a {
+    color: var(--color-white);
+    opacity: 0.8;
+    transition: opacity 0.2s;
+}
+
+footer nav ul a:hover {
+    opacity: 1;
+    text-decoration: underline;
+}
+
+footer > div > div:last-child a {
+    background-color: transparent;
+    color: var(--color-white);
+    border: 1px solid var(--color-white);
+    cursor: pointer;
+    font-weight: 500;
+    text-transform: uppercase;
+    font-size: 0.85rem;
+    padding: 0.5rem 1rem;
+    border-radius: var(--border-radius-sm);
+    transition: all 0.2s;
+    display: inline-block;
+}
+
+footer > div > div:last-child a:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+    text-decoration: none;
+}

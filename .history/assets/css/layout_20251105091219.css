@@ -1,0 +1,127 @@
+/*
+ * LAYOUT.CSS
+ * Define la estructura principal de la página, contenedores y layouts con Grid/Flexbox.
+ */
+
+/* ---------------------------------------------------- */
+/* 1. CONTENEDOR Y MAQUETACIÓN BASE (Requisito: max-width) */
+/* ---------------------------------------------------- */
+
+.container {
+    /* Centra el contenido y limita el ancho máximo */
+    max-width: var(--container-max-width); 
+    margin-left: auto;
+    margin-right: auto;
+    padding: 0 var(--space-md); /* Espaciado lateral */
+}
+
+/* ---------------------------------------------------- */
+/* 2. HEADER Y NAVEGACIÓN (Requisito: Sticky/Fixed y Flexbox) */
+/* ---------------------------------------------------- */
+
+.header {
+    /* Posicionamiento Sticky (Requisito) */
+    position: sticky;
+    top: 0;
+    width: 100%;
+    background-color: var(--color-background); 
+    box-shadow: var(--shadow-md); /* Sombra sutil para destacarlo */
+    z-index: 100; /* Alto z-index para superposición (Requisito) */
+    padding: var(--space-sm) 0;
+}
+
+/* Navegación (Ejercicio Flexbox) */
+.nav {
+    display: flex;
+    justify-content: space-between; /* Distribuye elementos a los extremos */
+    align-items: center; /* Alineación vertical */
+}
+
+.nav-links {
+    /* Barra de navegación interna (Ejercicio Flexbox) */
+    display: flex;
+    gap: var(--space-lg); /* Espacio entre los enlaces de navegación */
+    list-style: none; /* Quita las viñetas por defecto de las listas */
+}
+
+/* ---------------------------------------------------- */
+/* 3. SECCIÓN HERO (INICIO) (Requisito: Degradado) */
+/* ---------------------------------------------------- */
+
+.hero {
+    /* Degradado suave en la cabecera (Requisito) */
+    background: linear-gradient(
+        135deg, 
+        var(--color-secondary) 0%, /* Lavanda Claro */
+        var(--color-background) 80% /* Blanco */
+    );
+    padding: calc(var(--space-xl) * 2) 0; /* Padding grande para dar espacio */
+    margin-bottom: var(--space-xl);
+}
+
+.hero-content {
+    /* Layout del contenido del Hero: texto a la izquierda, imagen a la derecha */
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: var(--space-lg);
+
+    /* Adaptación básica para móviles: apilamiento */
+    flex-wrap: wrap; 
+}
+
+/* Opcional: Estilo para la imagen borrosa vista en Figma */
+.hero-image-placeholder {
+    flex: 1 1 40%;
+    min-width: 300px; /* Asegura que no se haga demasiado pequeño */
+    min-height: 250px;
+    background-color: var(--color-surface); 
+    border-radius: var(--border-radius);
+}
+
+/* ---------------------------------------------------- */
+/* 4. CATÁLOGO DE PRODUCTOS (Ejercicio CSS Grid) */
+/* ---------------------------------------------------- */
+
+/* Contenedor de la grilla de productos (Requisito: grilla responsive) */
+.product-grid {
+    display: grid;
+    /* La clave para la adaptabilidad (2 a 4 columnas): */
+    grid-template-columns: repeat(
+        /* Usamos auto-fit (o auto-fill) */
+        auto-fit, 
+        /* Columna con un ancho mínimo de 250px y máximo de 1 fracción (Requisito) */
+        minmax(250px, 1fr) 
+    );
+    gap: var(--space-lg); /* Espacio entre las tarjetas de producto (Requisito) */
+    margin-top: var(--space-xl);
+}
+
+/* ---------------------------------------------------- */
+/* 5. FOOTER (Requisito: Distribuido con Flexbox) */
+/* ---------------------------------------------------- */
+
+.footer {
+    padding: var(--space-xl) 0;
+    background-color: var(--color-primary); /* Fondo morado oscuro */
+    color: var(--color-text-on-primary); /* Texto blanco */
+}
+
+.footer-content {
+    display: flex;
+    justify-content: space-between; /* Distribución de columnas */
+    gap: var(--space-lg);
+    flex-wrap: wrap; /* Asegura que se apile en móviles */
+}
+
+.footer-section {
+    flex: 1 1 200px; /* Permite que cada sección crezca un poco */
+}
+
+.footer-section a {
+    color: var(--color-secondary); /* Enlaces en el footer más claros */
+}
+
+.footer-section a:hover {
+    color: var(--color-text-on-primary); /* Blanco puro al pasar el mouse */
+}

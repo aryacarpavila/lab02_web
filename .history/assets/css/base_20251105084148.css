@@ -1,0 +1,140 @@
+
+:root {
+    --color-primary: ; #2D096D/* Morado para la base */
+    --color-secondary: #ECECEC; /* */
+    --color-tertiary: #D8B8FF; /*  */
+
+    /* Fondo y texto */
+    --color-background: #ECECEC; /* Blanco como fondo base */
+    --color-surface: #AB92F7; /* Morado para tarjetas */
+    --color-text-primary: #000000; /* Negro para legibilidad */
+    --color-text-on-primary: var(--color-primary); /* Texto en botones primarios */
+    --color-focus: var(--color-background); /* Color de fondo */
+
+    --space-unit: 8px; 
+    --space-xs: calc(0.5 * var(--space-unit)); 
+    --space-sm: var(--space-unit);
+    --space-md: calc(2 * var(--space-unit)); 
+    --space-lg: calc(3 * var(--space-unit)); 
+    --space-xl: calc(5 * var(--space-unit)); 
+
+    --border-radius: 6px; 
+    --shadow-md: 0 4px 8px rgba(0, 0, 0, 0.1);
+    --container-max-width: 1200px; 
+
+    --font-size-base: 1rem;
+    --font-size-h1: clamp(2rem, 5vw + 1rem, 3rem);
+    --font-size-h2: clamp(1.75rem, 4vw + 1rem, 2.5rem);
+    --font-size-h3: clamp(1.25rem, 2vw + 1rem, 1.5rem);
+    --line-height-base: 1.6;
+}
+
+
+*, *::before, *::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: "Roboto", Elms Sans;
+    line-height: var(--line-height-base);
+    color: var(--color-text-primary);
+    background-color: var(--color-background);
+    font-size: var(--font-size-base);
+}
+
+
+h1, h2, h3 {
+    line-height: 1.2;
+    margin-bottom: var(--space-md);
+    font-weight: 600; 
+}
+
+h1 {
+    font-size: var(--font-size-h1);
+}
+
+h2 {
+    font-size: var(--font-size-h2);
+}
+
+h3 {
+    font-size: var(--font-size-h3);
+}
+
+p {
+    margin-bottom: var(--space-sm);
+}
+
+
+:focus-visible {
+    outline: 3px solid var(--color-focus);
+    outline-offset: 3px;
+    border-radius: var(--border-radius);
+}
+
+
+a:focus:not(:focus-visible),
+button:focus:not(:focus-visible),
+input:focus:not(:focus-visible),
+textarea:focus:not(:focus-visible) {
+    outline: none;
+}
+
+a {
+    color: var(--color-primary);
+    text-decoration: none;
+    transition: color 0.2s ease-in-out; /* Transición para efecto hover */
+}
+
+a:hover {
+    color: var(--color-secondary); /* Cambio de color al pasar el mouse */
+    text-decoration: underline; /* Subrayado al pasar el mouse */
+}
+
+a:active {
+    opacity: 0.8;
+}
+
+
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+input, textarea, button {
+    font-family: inherit; /* Heredar tipografía base */
+    font-size: var(--font-size-base);
+}
+
+
+input[type="text"],
+input[type="email"],
+textarea {
+    width: 100%;
+    padding: var(--space-sm);
+    border: 1px solid #D1D1D6;
+    border-radius: var(--border-radius);
+    transition: border-color 0.2s ease-in-out;
+}
+
+input:hover, textarea:hover {
+    border-color: var(--color-tertiary);
+}
+
+button {
+    cursor: pointer;
+    padding: var(--space-sm) var(--space-md);
+    border: none;
+    border-radius: var(--border-radius);
+    font-weight: 500;
+    transition: background-color 0.2s ease-in-out, transform 0.1s ease-out;
+}
+
+

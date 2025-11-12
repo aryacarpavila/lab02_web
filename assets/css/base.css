@@ -1,0 +1,82 @@
+/*
+
+ * Sector: Hogar 
+ * Tipografía: Opción Roboto
+ * Justificación: El Morado (elegancia) y el Gris (neutralidad) aportan una sensación de
+ * confort y sofisticación, ideal para el diseño de interiores moderno. La fuente Roboto
+ * garantiza legibilidad y un look limpio.
+ */
+
+:root {
+  /* Paleta de Colores */
+  --color-primary: #2D096D; /* Azul */
+  --color-secondary: #5D3FD3; /* Gris */
+  --color-text: #000000; /* Negro */
+  --color-background-light: #f8f9fa; /* Fondo muy claro (para secciones) */
+  --color-background-dark: #1A093F; /* Fondo oscuro (para footer) */
+  --color-white: #ffffff;
+  
+  /* Color de fondo del header/barra de navegación*/
+  --color-header-bg: var(--color-white); 
+
+  /* Espaciado */
+  --spacing-xs: 0.5rem;
+  --spacing-sm: 1rem;
+  --spacing-md: 1.5rem;
+  --spacing-lg: 3rem;
+
+  /* Tipografía */
+  --font-family-sans: "Segoe UI", Arial, sans-serif;
+  --font-weight-bold: 700;
+  --font-weight-regular: 400;
+}
+
+/* Base resets */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: var(--font-family-sans);
+  color: var(--color-text);
+  line-height: 1.6;
+  background-color: var(--color-white);
+}
+
+/* Contenedor central (para limitar el ancho del contenido) */
+.container {
+  max-width: 1200px; /* Ancho máximo estándar para un sitio web */
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: var(--spacing-sm);
+  padding-right: var(--spacing-sm);
+}
+
+/* Helpers */
+.text-center {
+  text-align: center;
+}
+
+/* Enlaces sin decorar */
+a {
+  color: var(--color-primary);
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+/* Lista sin estilos (para navegación) */
+ul {
+  list-style: none;
+}
+
+/* Clases específicas para el Header (se usarán en layout.css) */
+.site-branding {
+  font-size: 1.5rem;
+  font-weight: var(--font-weight-bold);
+  color: var(--color-text);
+}

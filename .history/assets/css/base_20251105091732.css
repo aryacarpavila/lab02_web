@@ -1,0 +1,99 @@
+/*
+
+ * Sector: Hogar 
+ * Tipografía: Opción Roboto
+ * Justificación: El Morado (elegancia) y el Gris (neutralidad) aportan una sensación de
+ * confort y sofisticación, ideal para el diseño de interiores moderno. La fuente Roboto
+ * garantiza legibilidad y un look limpio.
+ */
+:root {
+
+
+    --color-primary: #2D096D;       /* Morado Oscuro (Base - Para acciones y títulos) */
+    --color-secondary: #D9D2E9;     /* Lavanda Claro (Terciario - Para fondos y hover sutil) */
+    --color-tertiary: #5D3FD3;      /* Violeta Medio (Para acentos y enlaces) */
+
+
+    --color-background: #FFFFFF;    /* Fondo Blanco puro o #ECECEC de tu código */
+    --color-surface: #F8F8F8;       /* Fondo de tarjetas (Sutilmente gris) */
+    
+    --color-text-primary: #000000;  /* Texto Principal (Negro para legibilidad) */
+    --color-text-on-primary: #FFFFFF; /* Texto sobre color primario (¡BLANCO para el botón!) */
+    
+    --space-unit: 8px; 
+    --space-xs: calc(0.5 * var(--space-unit)); 
+    --space-sm: var(--space-unit);
+    --space-md: calc(2 * var(--space-unit)); 
+    --space-lg: calc(3 * var(--space-unit)); 
+    --space-xl: calc(5 * var(--space-unit)); 
+
+    --border-radius: 6px; 
+    --shadow-md: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra para tarjetas */
+    --container-max-width: 1200px; 
+
+    --font-size-base: 1rem;
+    --font-size-h1: clamp(2.5rem, 6vw + 1rem, 4rem);
+    --font-size-h2: clamp(1.75rem, 4vw + 1rem, 2.5rem);
+    --font-size-h3: clamp(1.25rem, 2vw + 1rem, 1.75rem);
+    --line-height-base: 1.6;
+}
+
+body {
+    /* Tipografía Roboto */
+    font-family: "Roboto"; 
+    line-height: var(--line-height-base);
+    color: var(--color-text-primary);
+    background-color: var(--color-background);
+    font-size: var(--font-size-base);
+}
+
+h1, h2, h3 {
+    line-height: 1.2;
+    margin-bottom: var(--space-md);
+    font-weight: 600; 
+    color: var(--color-primary); /* Color primario para títulos */
+}
+
+h1 {
+    font-size: var(--font-size-h1);
+}
+
+h2 {
+    font-size: var(--font-size-h2);
+}
+
+h3 {
+    font-size: var(--font-size-h3);
+}
+
+p {
+    margin-bottom: var(--space-sm);
+}
+
+:focus-visible {
+    outline: 3px solid var(--color-focus);
+    outline-offset: 3px;
+    border-radius: var(--border-radius);
+}
+
+a {
+    color: var(--color-tertiary); /* Color de acento para enlaces */
+    text-decoration: none;
+    transition: color 0.2s ease-in-out; 
+}
+
+a:hover {
+    color: var(--color-primary); 
+    text-decoration: underline; 
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+input, textarea, button {
+    font-family: inherit; 
+    font-size: var(--font-size-base);
+}

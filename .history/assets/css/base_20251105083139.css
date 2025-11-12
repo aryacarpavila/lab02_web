@@ -1,0 +1,140 @@
+
+:root {
+    --color-primary:  #AB92F7; /* Morado para la base */
+    --color-secondary: #ECECEC; /* */
+    --color-tertiary: #3A3A3C; /*  */
+
+    /* Fondo y texto */
+    --color-background: #F3E6FE; /* Blanco perlado como fondo base */
+    --color-surface: #AB92F7; /* Morado para tarjetas */
+    --color-text-primary: #1C1C1E; /* Negro casi puro para legibilidad */
+    --color-text-on-primary: #FFFFFF; /* Texto en botones primarios */
+    --color-focus: var(--color-primary); /* Color de fondo */
+
+    --space-unit: 8px; /* Unidad base para espaciados (escala 8px) */
+    --space-xs: calc(0.5 * var(--space-unit)); /* 4px */
+    --space-sm: var(--space-unit); /* 8px */
+    --space-md: calc(2 * var(--space-unit)); /* 16px */
+    --space-lg: calc(3 * var(--space-unit)); /* 24px */
+    --space-xl: calc(5 * var(--space-unit)); /* 40px */
+
+    --border-radius: 6px; /* Radio de borde consistente para tarjetas/botones */
+    --shadow-md: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra suave */
+    --container-max-width: 1200px; /* Ancho máximo para el contenido principal */
+
+    --font-size-base: 1rem;
+    --font-size-h1: clamp(2rem, 5vw + 1rem, 3rem);
+    --font-size-h2: clamp(1.75rem, 4vw + 1rem, 2.5rem);
+    --font-size-h3: clamp(1.25rem, 2vw + 1rem, 1.5rem);
+    --line-height-base: 1.6;
+}
+
+
+*, *::before, *::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: "Segoe UI", Arial, sans-serif;
+    line-height: var(--line-height-base);
+    color: var(--color-text-primary);
+    background-color: var(--color-background);
+    font-size: var(--font-size-base);
+}
+
+
+h1, h2, h3 {
+    line-height: 1.2;
+    margin-bottom: var(--space-md);
+    font-weight: 600; /* Un poco más de peso para títulos */
+}
+
+h1 {
+    font-size: var(--font-size-h1);
+}
+
+h2 {
+    font-size: var(--font-size-h2);
+}
+
+h3 {
+    font-size: var(--font-size-h3);
+}
+
+p {
+    margin-bottom: var(--space-sm);
+}
+
+
+:focus-visible {
+    outline: 3px solid var(--color-focus);
+    outline-offset: 3px;
+    border-radius: var(--border-radius); /* Consistencia con bordes */
+}
+
+
+a:focus:not(:focus-visible),
+button:focus:not(:focus-visible),
+input:focus:not(:focus-visible),
+textarea:focus:not(:focus-visible) {
+    outline: none;
+}
+
+a {
+    color: var(--color-primary);
+    text-decoration: none;
+    transition: color 0.2s ease-in-out; /* Transición para efecto hover */
+}
+
+a:hover {
+    color: var(--color-secondary); /* Cambio de color al pasar el mouse */
+    text-decoration: underline; /* Subrayado al pasar el mouse */
+}
+
+a:active {
+    opacity: 0.8;
+}
+
+
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+input, textarea, button {
+    font-family: inherit; /* Heredar tipografía base */
+    font-size: var(--font-size-base);
+}
+
+
+input[type="text"],
+input[type="email"],
+textarea {
+    width: 100%;
+    padding: var(--space-sm);
+    border: 1px solid #D1D1D6;
+    border-radius: var(--border-radius);
+    transition: border-color 0.2s ease-in-out;
+}
+
+input:hover, textarea:hover {
+    border-color: var(--color-tertiary);
+}
+
+button {
+    cursor: pointer;
+    padding: var(--space-sm) var(--space-md);
+    border: none;
+    border-radius: var(--border-radius);
+    font-weight: 500;
+    transition: background-color 0.2s ease-in-out, transform 0.1s ease-out;
+}
+
+
