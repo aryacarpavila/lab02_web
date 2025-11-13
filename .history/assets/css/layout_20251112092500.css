@@ -5,51 +5,6 @@
         - Flex layout: navegación, tarjetas de ofertas, acciones
 */
 
-<<<<<<< HEAD
-
-body {
-  font-family: var(--font-family-sans);
-  color: var(--color-text);
-  line-height: 1.6;
-  background-color: var(--color-white);
-}
-
-
-.container {
-  max-width: 1200px;
-  margin-left: auto;
-  margin-right: auto;
-  padding-left: var(--spacing-sm);
-  padding-right: var(--spacing-sm);
-}
-
-
-.text-center {
-  text-align: center;
-}
-
-a {
-  color: var(--color-primary);
-  text-decoration: none;
-}
-
-a:hover {
-  text-decoration: underline;
-}
-
-ul {
-  list-style: none;
-}
-
-
-.site-branding {
-  font-size: 1.5rem;
-  font-weight: var(--font-weight-bold);
-  color: var(--color-text);
-}
-
-=======
->>>>>>> 33dd5195b509846a7e9cbbce0b5001c323cf063f
 header {
     position: sticky;
     top: 0;
@@ -229,137 +184,100 @@ main section:nth-of-type(2) > div > div:nth-of-type(2) {
     background-color: var(--color-secondary);
 }
 
-.form-contacto .form-grid {
-    display: grid;
-    grid-template-columns: 1fr; 
-    gap: 1.5rem 2.5rem;
-    padding-bottom: 1rem;
+/* --- Estilos de Etiquetas (Labels) --- */
+/* Aplica a los labels: Nombre, Email, Asunto, Mensaje */
+.contact-form label {
+    font-weight: var(--font-weight-semibold, 600); /* Usamos 600 como fallback */
+    color: var(--color-text, #333); 
+    margin-bottom: var(--spacing-xs, 0.5rem);
+    font-size: 1.1rem;
+    display: block; /* Asegura que la etiqueta esté en su propia línea */
 }
 
-.form-contacto .columna-completa {
-    grid-column: 1 / -1; 
-}
-
-.form-contacto label {
-    font-weight: var(--font-weight-semibold);
-    color: var(--color-text); 
-    margin-bottom: 0.5rem; 
-    font-size: 1.05rem;
-    display: block;
-}
-
-.form-contacto input:not([type="submit"]):not([type="reset"]):not([type="button"]),
-.form-contacto textarea {
-    background-color: var(--color-white); 
-    border: 1.75px solid var(--border-color-input);
-    border-radius: var(--border-radius-sm);
-<<<<<<< HEAD
-    padding: 0.8rem 1rem; 
+/* --- Estilos de Campos de Entrada y Textarea --- */
+.contact-form input:not([type="button"]):not([type="submit"]):not([type="reset"]),
+.contact-form textarea {
+    /* Fondo blanco para que coincida con la imagen */
+    background-color: var(--color-white, #ffffff); 
+    /* Borde sutil y redondeado */
+    border: 1px solid var(--border-color-input, #ccc);
+    border-radius: var(--border-radius-sm, 4px);
+    padding: 0.75rem 1rem;
     font-size: 1rem;
-    color: var(--color-text);
+    color: var(--color-text, #333);
     width: 100%;
-    resize: vertical; 
+    resize: none; 
     transition: border-color 0.2s;
+    /* Los campos Nombre y Email están uno al lado del otro, esto se maneja con la estructura HTML */
 }
 
-.form-contacto input:focus,
-.form-contacto textarea:focus {
-    border-color: var(--color-primary);
+.contact-form input:focus,
+.contact-form textarea:focus {
+    border-color: var(--color-primary, #007bff); /* Color primario al enfocar */
     outline: none;
+    /* Sombra opcional al enfocar para mayor prominencia, pero no está en la imagen */
 }
 
-.form-contacto .botones {
+/* --- Contenedor de Botones (para alinear a la derecha) --- */
+.contact-form .button-group {
     display: flex;
-    justify-content: flex-end; 
-    gap: 0.55rem; 
-    margin-top: 1.5rem; 
-}
-
-.form-contacto .botones button {
-    font-size: 0.95rem;
-    padding: 0.6rem 1rem; 
-=======
-    padding: 0.8rem 1rem; /* Padding interno */
-    font-size: 1rem;
-    color: var(--color-text);
-    width: 100%;
-    resize: vertical; /* Permite redimensionar solo verticalmente el textarea */
-    transition: border-color 0.2s;
-}
-
-/* Estilo de enfoque (focus) */
-.form-contacto input:focus,
-.form-contacto textarea:focus {
-    border-color: var(--color-primary); /* Borde azul al enfocar */
-    outline: none;
+    justify-content: flex-end; /* Alinea los botones a la derecha */
+    gap: 0.5rem; /* Espacio entre los botones */
+    margin-top: 1rem; /* Espacio superior */
 }
 
 /* --- Estilos de Botones (Limpiar y Enviar) --- */
 
-/* Contenedor de botones: alineación a la derecha */
-.form-contacto .botones {
-    /* Es un contenedor flex independiente y sigue alineado a la derecha */
-    display: flex;
-    justify-content: flex-end; 
-    /* MODIFICADO: Cambiamos el gap (margen entre botones) a 0.55rem */
-    gap: 0.55rem; 
-    margin-top: 1.5rem; 
-    /* ¡Asegura que este div sea el único flex container de esta fila! */
-}
-
-/* Estilos comunes a ambos botones */
-.form-contacto .botones button {
-    font-size: 0.95rem;      
-    /* El padding de 0.6rem 1rem asegura que el botón tenga el tamaño del texto más un margen */
-    padding: 0.6rem 1rem; 
-    /* Aumentamos el border-radius para que sean LIGERAMENTE MÁS REDONDEADOS */
->>>>>>> 33dd5195b509846a7e9cbbce0b5001c323cf063f
-    border-radius: 6px; 
+/* Estilo general para todos los botones del formulario */
+.contact-form button,
+.contact-form input[type="submit"],
+.contact-form input[type="reset"] {
+    /* Estilos comunes a ambos botones */
+    font-size: 1rem;      
+    padding: 0.5rem 1rem; /* Ajuste para que se vean más compactos como en la imagen */
+    border-radius: var(--border-radius-sm, 4px); 
     cursor: pointer;
-    font-weight: var(--font-weight-semibold);
-    transition: all 0.2s ease;
     text-transform: capitalize;
-<<<<<<< HEAD
-=======
-    /* Estas propiedades ya aseguran que el botón se ajuste al contenido del texto */
->>>>>>> 33dd5195b509846a7e9cbbce0b5001c323cf063f
-    width: auto; 
-    flex-shrink: 0; 
+    font-weight: var(--font-weight-semibold, 600);
+    transition: all 0.2s ease;
+    white-space: nowrap; /* Evita que el texto del botón se rompa */
 }
 
-<<<<<<< HEAD
-=======
-/* 🔵 Botón "Enviar" (.btn-enviar) */
->>>>>>> 33dd5195b509846a7e9cbbce0b5001c323cf063f
-.form-contacto .btn-enviar {
-    background-color: var(--color-primary); 
-    color: var(--color-white); 
-    border: none; 
+/* 🔵 Botón "Enviar" (Send / Submit) */
+.contact-form .btn-submit {
+    /* Color de fondo azul */
+    background-color: var(--color-primary, #007bff); 
+    color: var(--color-white, #ffffff); 
+    border: none; /* Sin borde */
 }
 
-.form-contacto .btn-enviar:hover {
-    background-color: var(--color-secondary); 
-<<<<<<< HEAD
-    box-shadow: 0 2px 5px var(--color-background-dark); 
+.contact-form .btn-submit:hover {
+    /* Un azul más oscuro al pasar el ratón */
+    background-color: var(--color-secondary, #0056b3); 
+    transform: translateY(-1px); 
 }
 
-=======
-    box-shadow: 0 2px 5px rgba(52, 136, 247, 0.3); 
+/* ⚪ Botón "Limpiar" (Clear / Reset) */
+.contact-form .btn-reset {
+    /* Fondo gris muy claro o blanco */
+    background-color: var(--color-background-light, #f0f0f0); 
+    /* Texto gris para que coincida con la imagen */
+    color: var(--color-text-light, #6c757d); 
+    /* Borde sutil de un gris más oscuro */
+    border: 1px solid var(--border-color-input-dark, #ccc); 
+    font-weight: 500; /* Ligeramente más ligero que el botón azul */
 }
 
-/* ⚪ Botón "Limpiar" (.btn-limpiar) */
->>>>>>> 33dd5195b509846a7e9cbbce0b5001c323cf063f
-.form-contacto .btn-limpiar {
-    background-color: var(--color-white); 
-    color: var(--color-text-light); 
-    border: 1px solid var(--border-color-input); 
-    font-weight: 500;
+.contact-form .btn-reset:hover {
+    /* Un gris sutilmente más oscuro al pasar el ratón */
+    background-color: var(--color-background, #e9ecef); 
+    border-color: var(--color-text-light, #6c757d);
+    transform: translateY(-1px); 
 }
 
-.form-contacto .btn-limpiar:hover {
-    background-color: #fcfcfc; 
-    border-color: #bbbbbb;
-}
+
+
+
 
 footer h3 {
     font-size: 1.5rem;

@@ -1,0 +1,555 @@
+/*
+  components.css
+  - Botones (primario, outline), estados hover/focus
+  - Cards de producto y ofertas, sombras y radios
+  - Listas de categorías y enlaces auxiliares
+  - Formulario de contacto: inputs, labels, textarea, validaciones
+  - Selectores de atributo, pseudo-clases y pseudo-elementos
+*/
+
+header nav a {
+  /* Estilo para los enlaces de navegación */
+  color: var(--color-text);
+  font-weight: var(--font-weight-regular);
+  text-transform: uppercase;
+  padding: var(--spacing-xs) 0;
+  border-bottom: 2px solid transparent; 
+}
+
+header nav a:hover {
+  color: var(--color-primary);
+  border-bottom: 2px solid var(--color-primary);
+  text-decoration: none; 
+}
+
+article:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.12);
+}
+
+.hero-section {
+  padding: var(--spacing-lg) var(--spacing-md);
+  background-color: var(--color-background-dark); 
+}
+
+.hero-wrapper {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr; 
+  gap: var(--spacing-lg);
+  align-items: center;
+}
+
+.hero-content h1 {
+  font-size: clamp(2rem, 5vw, 4rem);
+  color: var(--color-text);
+  margin-bottom: var(--spacing-sm);
+  text-align: left; 
+}
+
+article img {
+  width: 100%;
+  height: 140px; 
+  object-fit: contain; 
+  margin-bottom: var(--spacing-sm);
+  background-color: #f8faff;
+  border-radius: 8px;
+}
+
+footer a {
+    color: var(--color-white);
+}
+
+.boton {
+    background-color: var(--color-primary); 
+    color: var(--color-white); 
+    border: none; 
+    font-weight: var(--font-weight-bold);
+    text-transform: uppercase;
+    text-decoration: none; 
+    cursor: pointer; 
+    display: inline-block; 
+    font-size: 0.75rem;     
+    padding: 0.5rem 0.8rem; 
+    border-radius: var(--border-radius, 4px); 
+    transition: background-color 0.3s ease;
+}
+
+.boton:hover,
+.boton:focus {
+    background-color: var(--color-secondary);
+    color: var(--color-white);
+}
+
+/* Título del producto */
+article h3 {
+  font-size: 1rem;
+  color: var(--color-text);
+  margin-top: var(--spacing-sm);
+  margin-bottom: 0.4rem;
+  font-weight: var(--font-weight-bold);
+}
+
+/* Precio */
+article p {
+  font-size: 0.95rem;
+  font-weight: var(--font-weight-bold);
+  color: var(--color-primary);
+  margin-bottom: var(--spacing-sm);
+}
+
+article button {
+  background-color: var(--color-primary);
+  border: 1px solid var(--color-background-dark);
+  color: var(--color-white);
+  padding: 0.5rem 1rem;
+  font-size: 0.8rem;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+article button:hover {
+  background-color: var(--color-secondary);
+  border-color: var(--color-primary);
+}
+
+
+/* === BOTONES PRINCIPALES === */
+.boton {
+  display: inline-block;
+  background-color: var(--color-primary);
+  color: var(--color-white);
+  padding: 0.6rem 1.2rem;
+  border-radius: 8px;
+  text-transform: uppercase;
+  font-weight: var(--font-weight-bold);
+  letter-spacing: 0.5px;
+  transition: background-color 0.3s ease;
+}
+
+.boton:hover {
+  background-color: var(--color-secondary);
+}
+
+/* === OFERTAS DE TEMPORADA === */
+.ofertas-temporada {
+  background: linear-gradient(90deg,rgba(26, 9, 63, 1) 0%, rgba(45, 9, 109, 1) 50%, rgba(93, 63, 211, 1) 100%);
+  padding: var(--spacing-lg) var(--spacing-md);
+  color: var(--color-white);
+}
+
+.ofertas-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.ofertas-container h2 {
+  font-size: 1.8rem;
+  font-weight: var(--font-weight-bold);
+  margin-bottom: 2rem;
+  color: var(--color-white);
+}
+
+
+/* === TARJETAS === */
+.oferta-card {
+  position: relative;
+  background-color: var(--color-white);
+  color: var(--color-text);
+  border-radius: 16px;
+  padding: 1.5rem 1.2rem;
+  text-align: left;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.oferta-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.25);
+}
+
+.oferta-card h3 {
+  font-size: 1.1rem;
+  font-weight: var(--font-weight-bold);
+  margin-bottom: 0.5rem;
+}
+
+.oferta-card p {
+  font-size: 0.9rem;
+  color: var(--color-text);
+  margin-bottom: 0.2rem;
+}
+
+.oferta-card .boton:hover {
+  background-color: var(--color-secondary);
+}
+
+.producto-destacado {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 3rem;
+  background: linear-gradient(90deg,rgba(213, 184, 255, 0.27) 3%, rgba(255, 255, 255, 1) 51%, rgba(213, 184, 255, 0.35) 98%);
+  padding: 3rem;
+  border-radius: 20px;
+  margin: 3rem auto;
+  max-width: 1100px;
+  color: #1e293b;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+}
+
+.producto-destacado__imagen {
+  flex: 0 0 400px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(180deg, var(--color-terciary), var(--color-white));
+  border-radius: 16px;
+  padding: 1.5rem;
+}
+
+.producto-destacado__imagen img {
+  width: 350px;
+  height: 350px;
+  object-fit: contain;
+  border-radius: 12px;
+}
+
+.producto-destacado__info {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 0.8rem;
+}
+
+.producto-destacado__info h2 {
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: #0f172a;
+}
+
+.producto-destacado__info p {
+  font-size: 1rem;
+  line-height: 1.5;
+  color: #334155;
+}
+
+.producto-destacado__info ul {
+  list-style: none;
+  padding: 0;
+  margin: 0.5rem 0;
+}
+
+.producto-destacado__info li {
+  font-size: 0.95rem;
+  color: #475569;
+}
+
+.producto-destacado__acciones {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+.producto-destacado__acciones .precio {
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: var(--color-background-dark);
+}
+
+.producto-destacado__acciones .boton {
+  background-color: var(--color-secondary);
+  color: var(--color-white);
+  padding: 0.6rem 1.2rem;
+  border-radius: 8px;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.producto-destacado__acciones .boton:hover {
+  background-color: var(--color-secondary);
+}
+
+@media (max-width: 900px) {
+  .producto-destacado {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .producto-destacado__info {
+    text-align: center;
+  }
+}
+
+
+
+/* ---------------------------------------------------------------------- */
+/* 1. Estilos de Formulario (Input y Textarea)                           */
+/* ---------------------------------------------------------------------- */
+
+main section:nth-of-type(5) label {
+    font-weight: var(--font-weight-semibold);
+    color: var(--color-text);
+    margin-bottom: var(--spacing-xs);
+    font-size: 1.1rem; /* Un poco más grande para el título del campo */
+}
+
+main section:nth-of-type(5) input:not([type="submit"]):not([type="reset"]),
+main section:nth-of-type(5) textarea {
+    /* Diseño del control */
+    border: 1px solid var(--border-color-input);
+    border-radius: var(--border-radius-sm);
+    padding: 0.75rem 1rem;
+    font-size: 1rem;
+    color: var(--color-text);
+    width: 100%;
+    /* Mantiene el tamaño del textarea fijo */
+    resize: none; 
+    transition: border-color 0.2s;
+}
+
+main section:nth-of-type(5) input:focus,
+main section:nth-of-type(5) textarea:focus {
+    border-color: var(--color-primary);
+    outline: none;
+}
+
+
+/* ---------------------------------------------------------------------- */
+/* 2. Botones del Formulario (Limpiar y Enviar)                           */
+/* ---------------------------------------------------------------------- */
+
+/* Estilo para el botón "Enviar" (Submit) - Botón principal azul */
+main section:nth-of-type(5) button[type="submit"] {
+    background-color: var(--color-primary); 
+    color: var(--color-white); 
+    border: none; 
+    font-weight: var(--font-weight-semibold);
+    text-transform: capitalize; /* "Enviar" en mayúscula inicial */
+    cursor: pointer; 
+    
+    font-size: 1rem;      
+    padding: 0.75rem 1.5rem; 
+    border-radius: var(--border-radius-sm); 
+    transition: all 0.2s ease;
+}
+
+main section:nth-of-type(5) button[type="submit"]:hover {
+    background-color: var(--color-secondary); 
+    transform: translateY(-1px); 
+}
+
+/* Estilo para el botón "Limpiar" (Reset) - Botón de contorno gris */
+main section:nth-of-type(5) button[type="reset"] {
+    background-color: var(--color-white); 
+    color: var(--color-text); 
+    border: 1px solid var(--border-color-input); 
+    cursor: pointer;
+    font-weight: 500;
+    text-transform: capitalize;
+    
+    font-size: 1rem; 
+    padding: 0.75rem 1.5rem; 
+    border-radius: var(--border-radius-sm); 
+    transition: all 0.2s;
+}
+
+main section:nth-of-type(5) button[type="reset"]:hover {
+    background-color: var(--color-background-light); 
+    border-color: var(--color-text-light);
+}
+
+/* ---------------------------------------------------------------------- */
+/* 3. Estilos del Footer                                                  */
+/* ---------------------------------------------------------------------- */
+
+/* Título del Footer */
+footer h3 {
+    font-size: 1.5rem;
+    margin-bottom: var(--spacing-xs);
+}
+
+/* Enlaces de Términos/Privacidad */
+footer nav ul a {
+    color: var(--color-white);
+    opacity: 0.8;
+    transition: opacity 0.2s;
+}
+
+footer nav ul a:hover {
+    opacity: 1;
+    text-decoration: underline;
+}
+
+/* Botón "Volver arriba" */
+footer > div > div:last-child a {
+    /* Estilo de Contorno y Colores Invertidos */
+    background-color: transparent; 
+    color: var(--color-white); 
+    border: 1px solid var(--color-white); 
+    cursor: pointer;
+    font-weight: 500;
+    text-transform: uppercase;
+    font-size: 0.85rem; 
+    padding: 0.5rem 1rem; 
+    border-radius: var(--border-radius-sm); 
+    transition: all 0.2s;
+    display: inline-block;
+}
+
+footer > div > div:last-child a:hover {
+    background-color: rgba(255, 255, 255, 0.1); 
+    text-decoration: none;
+}
+
+
+
+
+
+main section:nth-of-type(5) label {
+  font-weight: var(--font-weight-semibold);
+  color: var(--color-text);
+  margin-bottom: var(--spacing-xs);
+  font-size: 1.1rem;
+}
+
+main section:nth-of-type(5) input:not([type="submit"]):not([type="reset"]),
+main section:nth-of-type(5) textarea {
+  border: 1px solid var(--border-color-input);
+  border-radius: var(--border-radius-sm);
+  padding: 0.75rem 1rem;
+  font-size: 1rem;
+  color: var(--color-text);
+  width: 100%;
+  resize: none;
+  transition: border-color 0.2s;
+}
+
+main section:nth-of-type(5) input:focus,
+main section:nth-of-type(5) textarea:focus {
+  border-color: var(--color-primary);
+  outline: none;
+}
+
+/* === BOTONES DEL FORMULARIO === */
+/* Estilo para el botón "Enviar" (Submit) - Botón principal azul */
+main section:nth-of-type(5) button[type="submit"] {
+  background-color: var(--color-primary);
+  color: var(--color-white);
+  border: none;
+  font-weight: var(--font-weight-semibold);
+  text-transform: capitalize;
+  cursor: pointer;
+  font-size: 1rem;
+  padding: 0.75rem 1.5rem;
+  border-radius: var(--border-radius-sm);
+  transition: all 0.2s ease;
+}
+
+main section:nth-of-type(5) button[type="submit"]:hover {
+  background-color: var(--color-secondary);
+  transform: translateY(-1px);
+}
+
+/* Estilo para el botón "Limpiar" (Reset) - Botón de contorno gris */
+main section:nth-of-type(5) button[type="reset"] {
+  background-color: var(--color-white);
+  color: var(--color-text);
+  border: 1px solid var(--border-color-input);
+  cursor: pointer;
+  font-weight: 500;
+  text-transform: capitalize;
+  font-size: 1rem;
+  padding: 0.75rem 1.5rem;
+  border-radius: var(--border-radius-sm);
+  transition: all 0.2s;
+}
+
+main section:nth-of-type(5) button[type="reset"]:hover {
+  background-color: var(--color-background-light);
+  border-color: var(--color-text-light);
+  transform: translateY(-1px); /* Añadir transformación para consistencia */
+}
+
+/* ---------------------------------------------------------------------- */
+/* 6. ESTILOS DEL FOOTER */
+/* ---------------------------------------------------------------------- */
+
+/* Título del Footer */
+footer h3 {
+  font-size: 1.5rem;
+  margin-bottom: var(--spacing-xs);
+}
+
+/* Enlaces de Términos/Privacidad */
+footer nav ul a {
+  color: var(--color-white);
+  opacity: 0.8;
+  transition: opacity 0.2s;
+}
+
+footer nav ul a:hover {
+  opacity: 1;
+  text-decoration: underline;
+}
+
+/* Botón "Volver arriba" */
+footer > div > div:last-child a {
+  background-color: transparent;
+  color: var(--color-white);
+  border: 1px solid var(--color-white);
+  cursor: pointer;
+  font-weight: 500;
+  text-transform: uppercase;
+  font-size: 0.85rem;
+  padding: 0.5rem 1rem;
+  border-radius: var(--border-radius-sm);
+  transition: all 0.2s;
+  display: inline-block;
+}
+
+footer > div > div:last-child a:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+  text-decoration: none;
+}
+
+/* ---------------------------------------------------------------------- */
+/* 7. RESPONSIVE MEDIA QUERIES */
+/* ---------------------------------------------------------------------- */
+
+@media (max-width: 900px) {
+  /* Producto Destacado Responsivo */
+  .producto-destacado {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .producto-destacado__info {
+    text-align: center;
+  }
+}
+
+@media (max-width: 768px) {
+  /* Tarjetas de producto: 2 por fila en tabletas */
+  section:nth-of-type(2) > div:not(.catalogo-destacado) {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 480px) {
+  /* Tarjetas de producto: 1 por fila en móviles */
+  section:nth-of-type(2) > div:not(.catalogo-destacado) {
+    grid-template-columns: 1fr;
+  }
+
+  /* Ofertas: Asegura que el contenido se vea bien en pantallas pequeñas */
+  .oferta-card {
+    padding: 1rem;
+  }
+}

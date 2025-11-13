@@ -153,11 +153,8 @@ article button:hover {
   color: var(--color-white);
 }
 
-<<<<<<< HEAD
-=======
 
 /* === TARJETAS === */
->>>>>>> 33dd5195b509846a7e9cbbce0b5001c323cf063f
 .oferta-card {
   position: relative;
   background-color: var(--color-white);

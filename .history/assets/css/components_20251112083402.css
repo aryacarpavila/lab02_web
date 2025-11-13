@@ -8,6 +8,7 @@
 */
 
 header nav a {
+  /* Estilo para los enlaces de navegación */
   color: var(--color-text);
   font-weight: var(--font-weight-regular);
   text-transform: uppercase;
@@ -16,9 +17,8 @@ header nav a {
 }
 
 header nav a:hover {
-  background: var(--color-background);
-  color: var(--color-terciary);
-  border-bottom: 2px solid var(--color-terciary);
+  color: var(--color-primary);
+  border-bottom: 2px solid var(--color-primary);
   text-decoration: none; 
 }
 
@@ -153,11 +153,8 @@ article button:hover {
   color: var(--color-white);
 }
 
-<<<<<<< HEAD
-=======
 
 /* === TARJETAS === */
->>>>>>> 33dd5195b509846a7e9cbbce0b5001c323cf063f
 .oferta-card {
   position: relative;
   background-color: var(--color-white);
@@ -207,7 +204,7 @@ article button:hover {
   display: flex;
   justify-content: center;
   align-items: center;
-  background: transparent;
+  background: linear-gradient(90deg,rgba(42, 10, 87, 0.27) 0%, rgba(255, 255, 255, 1) 51%, rgba(42, 10, 87, 0.27) 100%);
   border-radius: 16px;
   padding: 1.5rem;
 }
@@ -293,45 +290,148 @@ footer > div > div:last-child a:hover {
     text-decoration: none;
 }
 
-.form-contacto .botones {
-    display: flex;
-    justify-content: flex-end; 
-    gap: 0.55rem; 
-    margin-top: 1.2rem; 
+
+
+
+
+main section:nth-of-type(5) label {
+  font-weight: var(--font-weight-semibold);
+  color: var(--color-text);
+  margin-bottom: var(--spacing-xs);
+  font-size: 1.1rem;
 }
 
-.form-contacto .botones button {
-    font-size: 0.95rem;
-    padding: 0.6rem 0.3rem; 
-    border-radius: 8px; 
-    cursor: pointer;
-    font-weight: var(--font-weight-semibold);
-    transition: all 0.2s ease;
-    text-transform: capitalize;
-    width: auto; 
-    flex-shrink: 0; 
+main section:nth-of-type(5) input:not([type="submit"]):not([type="reset"]),
+main section:nth-of-type(5) textarea {
+  border: 1px solid var(--border-color-input);
+  border-radius: var(--border-radius-sm);
+  padding: 0.75rem 1rem;
+  font-size: 1rem;
+  color: var(--color-text);
+  width: 100%;
+  resize: none;
+  transition: border-color 0.2s;
 }
 
-.form-contacto .btn-enviar {
-    background-color: var(--color-primary); 
-    color: var(--color-white); 
-    border: none; 
+main section:nth-of-type(5) input:focus,
+main section:nth-of-type(5) textarea:focus {
+  border-color: var(--color-primary);
+  outline: none;
 }
 
-.form-contacto .btn-enviar:hover {
-    background-color: var(--color-secondary); 
-    box-shadow: 0 2px 5px var(--color-background-dark); 
+/* === BOTONES DEL FORMULARIO === */
+/* Estilo para el botón "Enviar" (Submit) - Botón principal azul */
+main section:nth-of-type(5) button[type="submit"] {
+  background-color: var(--color-primary);
+  color: var(--color-white);
+  border: none;
+  font-weight: var(--font-weight-semibold);
+  text-transform: capitalize;
+  cursor: pointer;
+  font-size: 1rem;
+  padding: 0.75rem 1.5rem;
+  border-radius: var(--border-radius-sm);
+  transition: all 0.2s ease;
 }
 
-.form-contacto .btn-limpiar {
-    background-color: var(--color-white); 
-    color: var(--color-text-light); 
-    border: 0.75px solid var(--border-color-input); 
-    font-weight: 200;
+main section:nth-of-type(5) button[type="submit"]:hover {
+  background-color: var(--color-secondary);
+  transform: translateY(-1px);
 }
 
-.form-contacto .btn-limpiar:hover {
-    background-color: var(--color-terciary); 
-    border-color: var(--color-background-dark);
+/* Estilo para el botón "Limpiar" (Reset) - Botón de contorno gris */
+main section:nth-of-type(5) button[type="reset"] {
+  background-color: var(--color-white);
+  color: var(--color-text);
+  border: 1px solid var(--border-color-input);
+  cursor: pointer;
+  font-weight: 500;
+  text-transform: capitalize;
+  font-size: 1rem;
+  padding: 0.75rem 1.5rem;
+  border-radius: var(--border-radius-sm);
+  transition: all 0.2s;
 }
 
+main section:nth-of-type(5) button[type="reset"]:hover {
+  background-color: var(--color-background-light);
+  border-color: var(--color-text-light);
+  transform: translateY(-1px); /* Añadir transformación para consistencia */
+}
+
+/* ---------------------------------------------------------------------- */
+/* 6. ESTILOS DEL FOOTER */
+/* ---------------------------------------------------------------------- */
+
+/* Título del Footer */
+footer h3 {
+  font-size: 1.5rem;
+  margin-bottom: var(--spacing-xs);
+}
+
+/* Enlaces de Términos/Privacidad */
+footer nav ul a {
+  color: var(--color-white);
+  opacity: 0.8;
+  transition: opacity 0.2s;
+}
+
+footer nav ul a:hover {
+  opacity: 1;
+  text-decoration: underline;
+}
+
+/* Botón "Volver arriba" */
+footer > div > div:last-child a {
+  background-color: transparent;
+  color: var(--color-white);
+  border: 1px solid var(--color-white);
+  cursor: pointer;
+  font-weight: 500;
+  text-transform: uppercase;
+  font-size: 0.85rem;
+  padding: 0.5rem 1rem;
+  border-radius: var(--border-radius-sm);
+  transition: all 0.2s;
+  display: inline-block;
+}
+
+footer > div > div:last-child a:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+  text-decoration: none;
+}
+
+/* ---------------------------------------------------------------------- */
+/* 7. RESPONSIVE MEDIA QUERIES */
+/* ---------------------------------------------------------------------- */
+
+@media (max-width: 900px) {
+  /* Producto Destacado Responsivo */
+  .producto-destacado {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .producto-destacado__info {
+    text-align: center;
+  }
+}
+
+@media (max-width: 768px) {
+  /* Tarjetas de producto: 2 por fila en tabletas */
+  section:nth-of-type(2) > div:not(.catalogo-destacado) {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 480px) {
+  /* Tarjetas de producto: 1 por fila en móviles */
+  section:nth-of-type(2) > div:not(.catalogo-destacado) {
+    grid-template-columns: 1fr;
+  }
+
+  /* Ofertas: Asegura que el contenido se vea bien en pantallas pequeñas */
+  .oferta-card {
+    padding: 1rem;
+  }
+}

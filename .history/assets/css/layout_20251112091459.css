@@ -5,51 +5,6 @@
         - Flex layout: navegación, tarjetas de ofertas, acciones
 */
 
-<<<<<<< HEAD
-
-body {
-  font-family: var(--font-family-sans);
-  color: var(--color-text);
-  line-height: 1.6;
-  background-color: var(--color-white);
-}
-
-
-.container {
-  max-width: 1200px;
-  margin-left: auto;
-  margin-right: auto;
-  padding-left: var(--spacing-sm);
-  padding-right: var(--spacing-sm);
-}
-
-
-.text-center {
-  text-align: center;
-}
-
-a {
-  color: var(--color-primary);
-  text-decoration: none;
-}
-
-a:hover {
-  text-decoration: underline;
-}
-
-ul {
-  list-style: none;
-}
-
-
-.site-branding {
-  font-size: 1.5rem;
-  font-weight: var(--font-weight-bold);
-  color: var(--color-text);
-}
-
-=======
->>>>>>> 33dd5195b509846a7e9cbbce0b5001c323cf063f
 header {
     position: sticky;
     top: 0;
@@ -229,137 +184,76 @@ main section:nth-of-type(2) > div > div:nth-of-type(2) {
     background-color: var(--color-secondary);
 }
 
-.form-contacto .form-grid {
-    display: grid;
-    grid-template-columns: 1fr; 
-    gap: 1.5rem 2.5rem;
-    padding-bottom: 1rem;
-}
-
-.form-contacto .columna-completa {
-    grid-column: 1 / -1; 
-}
-
-.form-contacto label {
+main section:nth-of-type(5) label {
     font-weight: var(--font-weight-semibold);
-    color: var(--color-text); 
-    margin-bottom: 0.5rem; 
-    font-size: 1.05rem;
-    display: block;
+    color: var(--color-text);
+    margin-bottom: var(--spacing-xs);
+    font-size: 1.1rem;
 }
 
-.form-contacto input:not([type="submit"]):not([type="reset"]):not([type="button"]),
-.form-contacto textarea {
-    background-color: var(--color-white); 
-    border: 1.75px solid var(--border-color-input);
+main section:nth-of-type(5) input:not([type="submit"]):not([type="reset"]),
+main section:nth-of-type(5) textarea {
+    border: 1px solid var(--border-color-input);
     border-radius: var(--border-radius-sm);
-<<<<<<< HEAD
-    padding: 0.8rem 1rem; 
+    padding: 0.75rem 1rem;
     font-size: 1rem;
     color: var(--color-text);
     width: 100%;
-    resize: vertical; 
+    resize: none; 
     transition: border-color 0.2s;
 }
 
-.form-contacto input:focus,
-.form-contacto textarea:focus {
+main section:nth-of-type(5) input:focus,
+main section:nth-of-type(5) textarea:focus {
     border-color: var(--color-primary);
     outline: none;
 }
 
-.form-contacto .botones {
-    display: flex;
-    justify-content: flex-end; 
-    gap: 0.55rem; 
-    margin-top: 1.5rem; 
-}
 
-.form-contacto .botones button {
-    font-size: 0.95rem;
-    padding: 0.6rem 1rem; 
-=======
-    padding: 0.8rem 1rem; /* Padding interno */
-    font-size: 1rem;
-    color: var(--color-text);
-    width: 100%;
-    resize: vertical; /* Permite redimensionar solo verticalmente el textarea */
-    transition: border-color 0.2s;
-}
-
-/* Estilo de enfoque (focus) */
-.form-contacto input:focus,
-.form-contacto textarea:focus {
-    border-color: var(--color-primary); /* Borde azul al enfocar */
-    outline: none;
-}
-
-/* --- Estilos de Botones (Limpiar y Enviar) --- */
-
-/* Contenedor de botones: alineación a la derecha */
-.form-contacto .botones {
-    /* Es un contenedor flex independiente y sigue alineado a la derecha */
-    display: flex;
-    justify-content: flex-end; 
-    /* MODIFICADO: Cambiamos el gap (margen entre botones) a 0.55rem */
-    gap: 0.55rem; 
-    margin-top: 1.5rem; 
-    /* ¡Asegura que este div sea el único flex container de esta fila! */
-}
-
-/* Estilos comunes a ambos botones */
-.form-contacto .botones button {
-    font-size: 0.95rem;      
-    /* El padding de 0.6rem 1rem asegura que el botón tenga el tamaño del texto más un margen */
-    padding: 0.6rem 1rem; 
-    /* Aumentamos el border-radius para que sean LIGERAMENTE MÁS REDONDEADOS */
->>>>>>> 33dd5195b509846a7e9cbbce0b5001c323cf063f
-    border-radius: 6px; 
-    cursor: pointer;
-    font-weight: var(--font-weight-semibold);
-    transition: all 0.2s ease;
-    text-transform: capitalize;
-<<<<<<< HEAD
-=======
-    /* Estas propiedades ya aseguran que el botón se ajuste al contenido del texto */
->>>>>>> 33dd5195b509846a7e9cbbce0b5001c323cf063f
-    width: auto; 
-    flex-shrink: 0; 
-}
-
-<<<<<<< HEAD
-=======
-/* 🔵 Botón "Enviar" (.btn-enviar) */
->>>>>>> 33dd5195b509846a7e9cbbce0b5001c323cf063f
-.form-contacto .btn-enviar {
+main section:nth-of-type(5) button[type="submit"] {
     background-color: var(--color-primary); 
     color: var(--color-white); 
     border: none; 
+    font-weight: var(--font-weight-semibold);
+    text-transform: capitalize; 
+    cursor: pointer; 
+    
+    font-size: 1rem;      
+    padding: 0.75rem 1.5rem; 
+    border-radius: var(--border-radius-sm); 
+    transition: all 0.2s ease;
 }
 
-.form-contacto .btn-enviar:hover {
+main section:nth-of-type(5) button[type="submit"]:hover {
     background-color: var(--color-secondary); 
-<<<<<<< HEAD
-    box-shadow: 0 2px 5px var(--color-background-dark); 
+    transform: translateY(-1px); 
 }
 
-=======
-    box-shadow: 0 2px 5px rgba(52, 136, 247, 0.3); 
-}
-
-/* ⚪ Botón "Limpiar" (.btn-limpiar) */
->>>>>>> 33dd5195b509846a7e9cbbce0b5001c323cf063f
-.form-contacto .btn-limpiar {
+main section:nth-of-type(5) button[type="reset"] {
     background-color: var(--color-white); 
-    color: var(--color-text-light); 
+    color: var(--color-text); 
     border: 1px solid var(--border-color-input); 
+    cursor: pointer;
     font-weight: 500;
+    text-transform: capitalize;
+    
+    font-size: 1rem; 
+    padding: 0.75rem 1.5rem; 
+    border-radius: var(--border-radius-sm); 
+    transition: all 0.2s;
 }
 
-.form-contacto .btn-limpiar:hover {
-    background-color: #fcfcfc; 
-    border-color: #bbbbbb;
+main section:nth-of-type(5) button[type="reset"]:hover {
+    background-color: var(--color-background-light); 
+    border-color: var(--color-text-light);
+    transform: translateY(-1px); 
 }
+
+
+
+
+
+
 
 footer h3 {
     font-size: 1.5rem;

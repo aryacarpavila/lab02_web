@@ -1,4 +1,5 @@
 /*
+<<<<<<< HEAD
  * Sector: Hogar
  * Tipografía: Roboto (aunque se está usando 'Segoe UI' como base, se ajusta el comentario para reflejar la intención principal)
  * * Paleta Principal:
@@ -8,16 +9,34 @@
  * * Justificación de la Paleta: El Morado y sus variaciones aportan una sensación de lujo, elegancia y sofisticación ideal 
  para el diseño de interiores moderno. El uso de tonos neutros (Gris y Blanco/Negro) genera confort, equilibrio y versatilidad, 
  complementando la intensidad del morado. La fuente Roboto (o la base sans-serif) garantiza legibilidad y un look limpio.
+=======
+
+ * Sector: Hogar 
+ * Tipografía: Opción Roboto
+ * Justificación: El Morado (elegancia) y el Gris (neutralidad) aportan una sensación de
+ * confort y sofisticación, ideal para el diseño de interiores moderno. La fuente Roboto
+ * garantiza legibilidad y un look limpio.
+>>>>>>> 33dd5195b509846a7e9cbbce0b5001c323cf063f
  */
 
 :root {
   /* Paleta de Colores */
+<<<<<<< HEAD
   --color-primary: #2D096D; /* Morado */
   --color-secondary: #5D3FD3; /* Lila */
+=======
+  --color-primary: #2D096D; /* Azul */
+  --color-secondary: #5D3FD3; /* Gris */
+>>>>>>> 33dd5195b509846a7e9cbbce0b5001c323cf063f
   --color-text: #000000; /* Negro */
   --color-background-light: #f8f9fa; /* Fondo muy claro (para secciones) */
   --color-background-dark: #1A093F; /* Fondo oscuro (para footer) */
   --color-white: #ffffff;
+<<<<<<< HEAD
+=======
+  
+  /* Color de fondo del header/barra de navegación*/
+>>>>>>> 33dd5195b509846a7e9cbbce0b5001c323cf063f
   --color-header-bg: var(--color-white); 
 
   /* Espaciado */
@@ -32,8 +51,58 @@
   --font-weight-regular: 400;
 }
 
+<<<<<<< HEAD
+=======
+/* Base resets */
+>>>>>>> 33dd5195b509846a7e9cbbce0b5001c323cf063f
 * {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
 }
+<<<<<<< HEAD
+=======
+
+body {
+  font-family: var(--font-family-sans);
+  color: var(--color-text);
+  line-height: 1.6;
+  background-color: var(--color-white);
+}
+
+/* Contenedor central (para limitar el ancho del contenido) */
+.container {
+  max-width: 1200px; /* Ancho máximo estándar para un sitio web */
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: var(--spacing-sm);
+  padding-right: var(--spacing-sm);
+}
+
+/* Helpers */
+.text-center {
+  text-align: center;
+}
+
+/* Enlaces sin decorar */
+a {
+  color: var(--color-primary);
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+/* Lista sin estilos (para navegación) */
+ul {
+  list-style: none;
+}
+
+/* Clases específicas para el Header (se usarán en layout.css) */
+.site-branding {
+  font-size: 1.5rem;
+  font-weight: var(--font-weight-bold);
+  color: var(--color-text);
+}
+>>>>>>> 33dd5195b509846a7e9cbbce0b5001c323cf063f

@@ -8,6 +8,7 @@
 */
 
 header nav a {
+  /* Estilo para los enlaces de navegación */
   color: var(--color-text);
   font-weight: var(--font-weight-regular);
   text-transform: uppercase;
@@ -16,9 +17,8 @@ header nav a {
 }
 
 header nav a:hover {
-  background: var(--color-background);
-  color: var(--color-terciary);
-  border-bottom: 2px solid var(--color-terciary);
+  color: var(--color-primary);
+  border-bottom: 2px solid var(--color-primary);
   text-decoration: none; 
 }
 
@@ -153,11 +153,8 @@ article button:hover {
   color: var(--color-white);
 }
 
-<<<<<<< HEAD
-=======
 
 /* === TARJETAS === */
->>>>>>> 33dd5195b509846a7e9cbbce0b5001c323cf063f
 .oferta-card {
   position: relative;
   background-color: var(--color-white);
@@ -301,9 +298,9 @@ footer > div > div:last-child a:hover {
 }
 
 .form-contacto .botones button {
-    font-size: 0.95rem;
-    padding: 0.6rem 0.3rem; 
-    border-radius: 8px; 
+    font-size: 0.6rem;
+    padding: 0.6rem 0.6rem; 
+    border-radius: 6px; 
     cursor: pointer;
     font-weight: var(--font-weight-semibold);
     transition: all 0.2s ease;

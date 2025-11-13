@@ -1,0 +1,165 @@
+
+:root {
+    /* =======================================
+       Paleta de Colores
+       ======================================= */
+    --color-primary: #007AFF; /* Azul Eléctrico para acción/enlaces/foco */
+    --color-secondary: #FF3B30; /* Rojo Vibrante para énfasis/ofertas */
+    --color-tertiary: #3A3A3C; /* Gris Oscuro para texto secundario/detalles */
+
+    /* Fondo y texto */
+    --color-background: #F5F5F7; /* Gris Claro como fondo base */
+    --color-surface: #FFFFFF; /* Blanco para tarjetas/contenedores */
+    --color-text-primary: #1C1C1E; /* Negro casi puro para legibilidad */
+    --color-text-on-primary: #FFFFFF; /* Texto en botones primarios */
+    --color-focus: var(--color-primary); /* Color de foco accesible */
+
+    /* =======================================
+       Espaciado y Geometría
+       ======================================= */
+    --space-unit: 8px; /* Unidad base para espaciados (escala 8px) */
+    --space-xs: calc(0.5 * var(--space-unit)); /* 4px */
+    --space-sm: var(--space-unit); /* 8px */
+    --space-md: calc(2 * var(--space-unit)); /* 16px */
+    --space-lg: calc(3 * var(--space-unit)); /* 24px */
+    --space-xl: calc(5 * var(--space-unit)); /* 40px */
+
+    --border-radius: 6px; /* Radio de borde consistente para tarjetas/botones */
+    --shadow-md: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra suave */
+    --container-max-width: 1200px; /* Ancho máximo para el contenido principal */
+
+    /* =======================================
+       Tipografía Fluida (Usando clamp)
+       ======================================= */
+    /* Base: 16px a 18px */
+    --font-size-base: 1rem;
+    /* h1: 2rem (móvil) a 3rem (escritorio) */
+    --font-size-h1: clamp(2rem, 5vw + 1rem, 3rem);
+    /* h2: 1.75rem (móvil) a 2.5rem (escritorio) */
+    --font-size-h2: clamp(1.75rem, 4vw + 1rem, 2.5rem);
+    /* h3: 1.25rem (móvil) a 1.5rem (escritorio) */
+    --font-size-h3: clamp(1.25rem, 2vw + 1rem, 1.5rem);
+    /* Interlineado para mejor legibilidad */
+    --line-height-base: 1.6;
+}
+
+/* =======================================
+   Reseteo Básico y Tipografía Global
+   ======================================= */
+*, *::before, *::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: "Segoe UI", Arial, sans-serif;
+    line-height: var(--line-height-base);
+    color: var(--color-text-primary);
+    background-color: var(--color-background);
+    font-size: var(--font-size-base);
+}
+
+/* =======================================
+   Jerarquía Tipográfica (Aplicando variables fluidas)
+   ======================================= */
+h1, h2, h3 {
+    line-height: 1.2;
+    margin-bottom: var(--space-md);
+    font-weight: 600; /* Un poco más de peso para títulos */
+}
+
+h1 {
+    font-size: var(--font-size-h1);
+}
+
+h2 {
+    font-size: var(--font-size-h2);
+}
+
+h3 {
+    font-size: var(--font-size-h3);
+}
+
+p {
+    margin-bottom: var(--space-sm);
+}
+
+/* =======================================
+   Accesibilidad y Enlaces
+   ======================================= */
+
+/* Estilo de foco accesible (:focus-visible) */
+:focus-visible {
+    outline: 3px solid var(--color-focus);
+    outline-offset: 3px;
+    border-radius: var(--border-radius); /* Consistencia con bordes */
+}
+
+/* Evitar el outline feo en navegadores antiguos si no se usa el mouse */
+a:focus:not(:focus-visible),
+button:focus:not(:focus-visible),
+input:focus:not(:focus-visible),
+textarea:focus:not(:focus-visible) {
+    outline: none;
+}
+
+a {
+    color: var(--color-primary);
+    text-decoration: none;
+    transition: color 0.2s ease-in-out; /* Transición para efecto hover */
+}
+
+a:hover {
+    color: var(--color-secondary); /* Cambio de color al pasar el mouse */
+    text-decoration: underline; /* Subrayado al pasar el mouse */
+}
+
+a:active {
+    opacity: 0.8;
+}
+
+/* =======================================
+   Imágenes y Formularios Base
+   ======================================= */
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+input, textarea, button {
+    font-family: inherit; /* Heredar tipografía base */
+    font-size: var(--font-size-base);
+}
+
+/* Estilos iniciales para inputs, mejorados en components.css */
+input[type="text"],
+input[type="email"],
+textarea {
+    width: 100%;
+    padding: var(--space-sm);
+    border: 1px solid #D1D1D6;
+    border-radius: var(--border-radius);
+    transition: border-color 0.2s ease-in-out;
+}
+
+input:hover, textarea:hover {
+    border-color: var(--color-tertiary);
+}
+
+/* Botones Base (Serán mejorados en components.css) */
+button {
+    cursor: pointer;
+    padding: var(--space-sm) var(--space-md);
+    border: none;
+    border-radius: var(--border-radius);
+    font-weight: 500;
+    transition: background-color 0.2s ease-in-out, transform 0.1s ease-out;
+}
+
+

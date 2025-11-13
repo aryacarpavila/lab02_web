@@ -5,51 +5,6 @@
         - Flex layout: navegación, tarjetas de ofertas, acciones
 */
 
-<<<<<<< HEAD
-
-body {
-  font-family: var(--font-family-sans);
-  color: var(--color-text);
-  line-height: 1.6;
-  background-color: var(--color-white);
-}
-
-
-.container {
-  max-width: 1200px;
-  margin-left: auto;
-  margin-right: auto;
-  padding-left: var(--spacing-sm);
-  padding-right: var(--spacing-sm);
-}
-
-
-.text-center {
-  text-align: center;
-}
-
-a {
-  color: var(--color-primary);
-  text-decoration: none;
-}
-
-a:hover {
-  text-decoration: underline;
-}
-
-ul {
-  list-style: none;
-}
-
-
-.site-branding {
-  font-size: 1.5rem;
-  font-weight: var(--font-weight-bold);
-  color: var(--color-text);
-}
-
-=======
->>>>>>> 33dd5195b509846a7e9cbbce0b5001c323cf063f
 header {
     position: sticky;
     top: 0;
@@ -231,54 +186,36 @@ main section:nth-of-type(2) > div > div:nth-of-type(2) {
 
 .form-contacto .form-grid {
     display: grid;
-    grid-template-columns: 1fr; 
-    gap: 1.5rem 2.5rem;
+    /* Divide el espacio en dos columnas iguales para Nombre y Email */
+    grid-template-columns: 1fr 1fr; 
+    gap: 1.5rem 2.5rem; /* Espaciado vertical (1.5rem) y horizontal (2.5rem) */
     padding-bottom: 1rem;
 }
 
+/* Fuerza a Asunto y Mensaje a ocupar ambas columnas (el ancho completo) */
 .form-contacto .columna-completa {
     grid-column: 1 / -1; 
 }
+
+/* --- Estilos de Etiquetas (Labels) --- */
 
 .form-contacto label {
     font-weight: var(--font-weight-semibold);
     color: var(--color-text); 
     margin-bottom: 0.5rem; 
-    font-size: 1.05rem;
+    font-size: 1.05rem; /* Ligeramente más grande que el texto del input */
     display: block;
 }
 
+/* --- Estilos de Campos de Entrada (Input y Textarea) --- */
+
 .form-contacto input:not([type="submit"]):not([type="reset"]):not([type="button"]),
 .form-contacto textarea {
+    /* Fondo blanco (Clave para replicar la imagen) */
     background-color: var(--color-white); 
-    border: 1.75px solid var(--border-color-input);
+    /* Borde sutil y redondeado */
+    border: 1px solid var(--border-color-input);
     border-radius: var(--border-radius-sm);
-<<<<<<< HEAD
-    padding: 0.8rem 1rem; 
-    font-size: 1rem;
-    color: var(--color-text);
-    width: 100%;
-    resize: vertical; 
-    transition: border-color 0.2s;
-}
-
-.form-contacto input:focus,
-.form-contacto textarea:focus {
-    border-color: var(--color-primary);
-    outline: none;
-}
-
-.form-contacto .botones {
-    display: flex;
-    justify-content: flex-end; 
-    gap: 0.55rem; 
-    margin-top: 1.5rem; 
-}
-
-.form-contacto .botones button {
-    font-size: 0.95rem;
-    padding: 0.6rem 1rem; 
-=======
     padding: 0.8rem 1rem; /* Padding interno */
     font-size: 1rem;
     color: var(--color-text);
@@ -301,8 +238,7 @@ main section:nth-of-type(2) > div > div:nth-of-type(2) {
     /* Es un contenedor flex independiente y sigue alineado a la derecha */
     display: flex;
     justify-content: flex-end; 
-    /* MODIFICADO: Cambiamos el gap (margen entre botones) a 0.55rem */
-    gap: 0.55rem; 
+    gap: 0.8rem; /* Espacio entre los botones */
     margin-top: 1.5rem; 
     /* ¡Asegura que este div sea el único flex container de esta fila! */
 }
@@ -310,27 +246,20 @@ main section:nth-of-type(2) > div > div:nth-of-type(2) {
 /* Estilos comunes a ambos botones */
 .form-contacto .botones button {
     font-size: 0.95rem;      
-    /* El padding de 0.6rem 1rem asegura que el botón tenga el tamaño del texto más un margen */
+    /* Reducimos el padding horizontal para ACORTAR el botón */
     padding: 0.6rem 1rem; 
     /* Aumentamos el border-radius para que sean LIGERAMENTE MÁS REDONDEADOS */
->>>>>>> 33dd5195b509846a7e9cbbce0b5001c323cf063f
     border-radius: 6px; 
     cursor: pointer;
     font-weight: var(--font-weight-semibold);
     transition: all 0.2s ease;
     text-transform: capitalize;
-<<<<<<< HEAD
-=======
-    /* Estas propiedades ya aseguran que el botón se ajuste al contenido del texto */
->>>>>>> 33dd5195b509846a7e9cbbce0b5001c323cf063f
+    /* Para que los botones solo ocupen el contenido necesario */
     width: auto; 
-    flex-shrink: 0; 
+    flex-shrink: 0; /* Evita que el botón se encoja */
 }
 
-<<<<<<< HEAD
-=======
 /* 🔵 Botón "Enviar" (.btn-enviar) */
->>>>>>> 33dd5195b509846a7e9cbbce0b5001c323cf063f
 .form-contacto .btn-enviar {
     background-color: var(--color-primary); 
     color: var(--color-white); 
@@ -339,16 +268,10 @@ main section:nth-of-type(2) > div > div:nth-of-type(2) {
 
 .form-contacto .btn-enviar:hover {
     background-color: var(--color-secondary); 
-<<<<<<< HEAD
-    box-shadow: 0 2px 5px var(--color-background-dark); 
-}
-
-=======
     box-shadow: 0 2px 5px rgba(52, 136, 247, 0.3); 
 }
 
 /* ⚪ Botón "Limpiar" (.btn-limpiar) */
->>>>>>> 33dd5195b509846a7e9cbbce0b5001c323cf063f
 .form-contacto .btn-limpiar {
     background-color: var(--color-white); 
     color: var(--color-text-light); 
