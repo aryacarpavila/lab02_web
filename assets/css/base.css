@@ -1,0 +1,39 @@
+/*
+ * Sector: Hogar
+ * Tipografía: Roboto (aunque se está usando 'Segoe UI' como base, se ajusta el comentario para reflejar la intención principal)
+ * * Paleta Principal:
+ * - Primario: #2D096D (Morado Oscuro / Ígido) -> Elegancia, lujo, creatividad (Hogar sofisticado).
+ * - Secundario: #5D3FD3 (Morado Claro/Lavanda) -> Calma, serenidad.
+ * - Terciario/Neutral: #000000 (Negro), #f8f9fa (Fondo Claro), #ffffff (Blanco)
+ * * Justificación de la Paleta: El Morado y sus variaciones aportan una sensación de lujo, elegancia y sofisticación ideal 
+ para el diseño de interiores moderno. El uso de tonos neutros (Gris y Blanco/Negro) genera confort, equilibrio y versatilidad, 
+ complementando la intensidad del morado. La fuente Roboto (o la base sans-serif) garantiza legibilidad y un look limpio.
+ */
+
+:root {
+  /* Paleta de Colores */
+  --color-primary: #2D096D; /* Morado */
+  --color-secondary: #5D3FD3; /* Lila */
+  --color-text: #000000; /* Negro */
+  --color-background-light: #f8f9fa; /* Fondo muy claro (para secciones) */
+  --color-background-dark: #1A093F; /* Fondo oscuro (para footer) */
+  --color-white: #ffffff;
+  --color-header-bg: var(--color-white); 
+
+  /* Espaciado */
+  --spacing-xs: 0.5rem;
+  --spacing-sm: 1rem;
+  --spacing-md: 1.5rem;
+  --spacing-lg: 3rem;
+
+  /* Tipografía */
+  --font-family-sans: "Segoe UI", Arial, sans-serif;
+  --font-weight-bold: 700;
+  --font-weight-regular: 400;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}

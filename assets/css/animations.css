@@ -1,0 +1,22 @@
+/*
+  animations.css
+  - Transiciones para hover/focus de botones, cards y enlaces
+  - @keyframes para badges u otros elementos (p. ej., pulse, fadeInUp)
+  - Transformaciones suaves (scale/translate) y timings accesibles
+*/
+
+@keyframes fadeInSlide {
+    from {
+        opacity: 0;
+        transform: translateY(15px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+main section:first-of-type h1 {
+    opacity: 0;
+    animation: fadeInSlide 1s ease-out forwards;
+}
